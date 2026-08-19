@@ -15,7 +15,7 @@ export function ExperienceSection() {
       <div className="experience-layout">
         <div className="experience-intro" data-reveal="copy">
           <p className="experience-statement">
-            Growing through products of increasing depth and complexity.
+            Different products. Same goal: make them easier to use.
           </p>
           <a className="text-link resume-link" href={siteConfig.resumeUrl} download>
             Download résumé <span aria-hidden="true">↗</span>

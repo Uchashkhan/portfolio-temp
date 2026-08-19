@@ -21,7 +21,7 @@ export const projects: Project[] = [
     category: "Product Design · EdTech",
     year: "2026",
     description:
-      "Reimagining how students discover, navigate and engage with their daily learning experience.",
+      "Making everyday learning easier to navigate, continue, and act on.",
     image: null,
     imageAlt: "Shikho app redesign project cover",
     aspectRatio: "portrait",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     category: "Product Design · Learning Analytics",
     year: "2026",
     description:
-      "Making student performance easier to understand, act on and improve.",
+      "Turning student performance data into something clearer, more useful, and motivating.",
     image: null,
     imageAlt: "Shikho report card project cover",
     aspectRatio: "landscape",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     category: "UX Design · B2B Product",
     year: "2024–2025",
     description:
-      "Simplifying complex engineering workflows for water infrastructure design.",
+      "Making complex engineering workflows easier to move through.",
     image: null,
     imageAlt: "CADEA CAD workflows project cover",
     aspectRatio: "landscape",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     category: "Product Design · FinTech",
     year: "2023–2024",
     description:
-      "Simplifying investment journeys across mutual funds, FDRs and DPS.",
+      "Simplifying how people explore and complete digital investment journeys.",
     image: null,
     imageAlt: "Bini investment platform project cover",
     aspectRatio: "portrait",
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     category: "UX/UI · E-commerce",
     year: "Earlier Work",
     description:
-      "Designing a cleaner product-discovery and purchasing experience for books.",
+      "Improving how people discover and purchase books online.",
     image: null,
     imageAlt: "Bhorer Kagoj Prokashan project cover",
     aspectRatio: "wide",

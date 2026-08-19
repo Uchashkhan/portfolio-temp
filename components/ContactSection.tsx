@@ -8,8 +8,11 @@ export function ContactSection() {
         Contact
       </SectionLabel>
       <div className="contact-layout" data-reveal="contact">
-        <p className="contact-statement">Have a product problem worth solving?</p>
+        <p className="contact-statement">Let&apos;s build thoughtful products together.</p>
         <div className="contact-actions">
+          <p className="contact-support">
+            If you&apos;re building a thoughtful product, I&apos;d love to hear about it.
+          </p>
           <a className="contact-primary" href={`mailto:${siteConfig.email}`}>
             Let&apos;s talk <span aria-hidden="true">↗</span>
           </a>

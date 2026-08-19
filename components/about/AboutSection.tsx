@@ -2,11 +2,11 @@ import { SectionLabel } from "@/components/SectionLabel";
 import { ProfileVisual } from "./ProfileVisual";
 
 const details = [
-  { label: "Currently", value: "Product Designer at Shikho" },
+  { label: "Currently", value: "Product Designer\nShikho" },
   { label: "Based in", value: "Dhaka, Bangladesh" },
   {
     label: "Focus",
-    value: "Product Design · Interaction Design · Product Thinking",
+    value: "Product Design\nInteraction Design\nProduct Thinking",
   },
 ];
 
@@ -22,15 +22,15 @@ export function AboutSection() {
 
         <div className="about-stack" data-reveal="panel">
           <div className="about-copy-panel">
-            <p className="about-lead">
-              Hi, I&apos;m Uchash. I&apos;m a Product Designer focused on turning
-              complicated systems into experiences people can understand and use
-              naturally.
+            <p className="about-lead">I like making complicated things feel obvious.</p>
+            <p>
+              I&apos;m Uchash, a Product Designer based in Dhaka.
             </p>
             <p>
-              My work has taken me across EdTech, FinTech, engineering software
-              and e-commerce — from consumer mobile products to complex
-              professional tools.
+              I&apos;ve worked across <strong>EdTech, FinTech, engineering software, and e-commerce</strong> — often on products with a lot happening beneath the surface.
+            </p>
+            <p>
+              I enjoy finding the structure inside that complexity, removing what gets in the way, and shaping experiences that feel natural to use.
             </p>
           </div>
 
@@ -44,10 +44,9 @@ export function AboutSection() {
           </dl>
 
           <div className="workflow-note">
-            <span className="eyebrow">Working style</span>
+            <span className="eyebrow">How I work</span>
             <p>
-              I use AI-assisted prototyping and design-to-code workflows to move
-              quickly between ideas, prototypes and production conversations.
+              I use AI-assisted prototyping and design-to-code workflows to move faster from <strong>idea → prototype → product</strong> — without treating speed as a substitute for design judgment.
             </p>
           </div>
         </div>

@@ -11,6 +11,7 @@ export function WorkGrid() {
       <SectionLabel id="selected-work" index="01">
         Selected work
       </SectionLabel>
+      <p className="work-intro">A few products and experiences I&apos;ve helped rethink.</p>
       <div className="work-grid">
         {projects.map((project, index) => (
           <ProjectCard key={project.slug} project={project} index={index} />

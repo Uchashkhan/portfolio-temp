@@ -9,7 +9,7 @@
   --faint: #8a8a84;
   --border: rgba(23, 23, 22, 0.1);
   --gutter: clamp(1.125rem, 2.45vw, 2.5rem);
-  --section-space: clamp(7.5rem, 13vw, 13.5rem);
+  --section-space: clamp(6.75rem, 11.5vw, 11.5rem);
   --radius: 0.75rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-ease: cubic-bezier(0.18, 0.72, 0.22, 1);
@@ -246,6 +246,7 @@ a:focus-visible {
 
 .header-link {
   min-height: 2.75rem;
+  white-space: nowrap;
 }
 
 /* Hero */
@@ -256,6 +257,7 @@ a:focus-visible {
 }
 
 .hero-inner {
+  width: 100%;
   opacity: 1;
 }
 
@@ -303,9 +305,9 @@ a:focus-visible {
 }
 
 .hero h1 {
-  max-width: 14ch;
+  max-width: 13.5ch;
   margin: 0;
-  font-size: clamp(3.15rem, 7.25vw, 7.25rem);
+  font-size: clamp(3.15rem, 7.1vw, 7.1rem);
   font-weight: 480;
   letter-spacing: -0.067em;
   line-height: 0.96;
@@ -313,6 +315,10 @@ a:focus-visible {
   clip-path: inset(0 0 100% 0);
   transform-origin: left bottom;
   animation: hero-unmask 560ms var(--motion-ease) 110ms forwards;
+}
+
+.hero h1 span {
+  display: inline;
 }
 
 .hero-foot {
@@ -330,15 +336,30 @@ a:focus-visible {
   max-width: 31rem;
   margin: 0;
   color: var(--muted);
-  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  font-size: clamp(0.9375rem, 1.1vw, 1rem);
   line-height: 1.55;
+}
+
+.hero-foot > p span {
+  display: block;
+}
+
+.hero-foot > p span + span {
+  margin-top: 0.35rem;
+}
+
+.hero-foot > p strong,
+.about-copy-panel strong,
+.workflow-note strong {
+  color: var(--ink);
+  font-weight: 550;
 }
 
 .scroll-cue {
   grid-column: 11 / -1;
   justify-self: end;
   color: var(--faint);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.04em;
 }
 
@@ -420,10 +441,18 @@ a:focus-visible {
   padding-top: 2rem;
 }
 
+.work-intro {
+  max-width: 32rem;
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
 .work-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(2.8rem, 5vw, 5.75rem) clamp(0.8rem, 1.2vw, 1.25rem);
+  gap: clamp(2.4rem, 4vw, 4.75rem) clamp(0.8rem, 1.2vw, 1.25rem);
   padding-top: clamp(2.5rem, 4vw, 4rem);
 }
 
@@ -441,12 +470,26 @@ a:focus-visible {
   justify-self: end;
 }
 
+.project,
+.project-link,
+.project-static,
+.project-visual {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.project-heading-row h3 {
+  min-width: 0;
+}
+
 .project:nth-child(3) {
-  margin-top: clamp(2rem, 5vw, 5.5rem);
+  margin-top: clamp(1.5rem, 4vw, 4.5rem);
 }
 
 .project:nth-child(4) {
-  margin-top: clamp(2rem, 5vw, 5.5rem);
+  margin-top: clamp(1.5rem, 4vw, 4.5rem);
 }
 
 .project-visual {
@@ -497,6 +540,11 @@ a:focus-visible {
   gap: 1rem;
 }
 
+.placeholder-top span,
+.placeholder-bottom span {
+  min-width: 0;
+}
+
 .placeholder-bottom {
   align-items: end;
 }
@@ -504,13 +552,14 @@ a:focus-visible {
 .placeholder-bottom span:last-child {
   max-width: 9rem;
   text-align: right;
+  overflow-wrap: anywhere;
 }
 
 .placeholder-mark {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(2.7rem, 7.2vw, 7.5rem);
+  font-size: clamp(2.5rem, 6.4vw, 6.25rem);
   font-weight: 470;
   letter-spacing: -0.075em;
   line-height: 0.8;
@@ -526,13 +575,13 @@ a:focus-visible {
 }
 
 .placeholder--ink .placeholder-mark {
-  align-items: end;
-  justify-content: start;
-  height: 100%;
-  padding-bottom: 8%;
-  font-size: clamp(3.25rem, 8vw, 8rem);
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding-bottom: 0;
+  font-size: clamp(3rem, 6.6vw, 6.6rem);
+  writing-mode: horizontal-tb;
+  transform: none;
 }
 
 .placeholder--paper {
@@ -543,7 +592,7 @@ a:focus-visible {
 .placeholder--paper::before {
   position: absolute;
   inset: 12% 8%;
-  border: 1px solid rgba(23, 23, 22, 0.15);
+  border: 1px solid rgba(23, 23, 22, 0.11);
   border-radius: 50%;
   content: "";
   transition: transform 460ms var(--motion-ease);
@@ -553,7 +602,7 @@ a:focus-visible {
   position: relative;
   z-index: 1;
   flex-direction: column;
-  gap: 0.13em;
+  gap: 0.1em;
   text-align: center;
 }
 
@@ -577,14 +626,14 @@ a:focus-visible {
 }
 
 .placeholder--stone::before {
-  width: 38%;
+  width: 32%;
   aspect-ratio: 1;
   top: 14%;
   right: 8%;
 }
 
 .placeholder--stone::after {
-  width: 20%;
+  width: 16%;
   aspect-ratio: 1;
   right: 30%;
   bottom: 9%;
@@ -612,7 +661,7 @@ a:focus-visible {
 
 .placeholder--graphite::before {
   position: absolute;
-  inset: 22% 15%;
+  inset: 28% 18%;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50% 50% 0 0;
   content: "";
@@ -634,7 +683,7 @@ a:focus-visible {
 
 .placeholder--warm::before {
   position: absolute;
-  inset: 0 38% 0 auto;
+  inset: 0 42% 0 auto;
   width: 1px;
   background: rgba(23, 23, 22, 0.13);
   content: "";
@@ -781,7 +830,7 @@ a:focus-visible {
 .project-heading-row span,
 .project-category {
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
 }
 
 .project-category {
@@ -792,7 +841,7 @@ a:focus-visible {
   max-width: 35rem;
   padding-top: 0.9rem;
   color: var(--muted);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   line-height: 1.55;
 }
 
@@ -912,13 +961,13 @@ a:focus-visible {
 
 .about-copy-panel {
   display: grid;
-  gap: 2rem;
+  gap: 1.35rem;
 }
 
 .about-copy-panel p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   line-height: 1.6;
 }
 
@@ -949,8 +998,9 @@ a:focus-visible {
 .detail-row dt,
 .detail-row dd {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   line-height: 1.45;
+  white-space: pre-line;
 }
 
 .detail-row dt {
@@ -961,7 +1011,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 13rem;
+  min-height: 11.5rem;
   background: #deded8;
 }
 
@@ -971,8 +1021,8 @@ a:focus-visible {
 
 .workflow-note p {
   max-width: 28rem;
-  margin: 3rem 0 0;
-  font-size: 0.9rem;
+  margin: 2rem 0 0;
+  font-size: 0.9375rem;
   line-height: 1.55;
 }
 
@@ -995,16 +1045,16 @@ a:focus-visible {
 }
 
 .experience-statement {
-  max-width: 13ch;
+  max-width: 15ch;
   margin: 0;
-  font-size: clamp(2rem, 3.6vw, 3.75rem);
+  font-size: clamp(1.85rem, 3.2vw, 3.25rem);
   font-weight: 470;
   letter-spacing: -0.055em;
   line-height: 1.02;
 }
 
 .resume-link {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
 }
 
 .experience-list {
@@ -1028,7 +1078,7 @@ a:focus-visible {
 .experience-number,
 .experience-row time {
   color: var(--muted);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.03em;
 }
 
@@ -1051,7 +1101,7 @@ a:focus-visible {
 .experience-role p {
   padding-top: 0.35rem;
   color: var(--muted);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
 }
 
 /* Contact and footer */
@@ -1086,6 +1136,14 @@ a:focus-visible {
   padding-bottom: 0.4rem;
 }
 
+.contact-support {
+  max-width: 15rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
 .contact-primary {
   font-size: clamp(1.4rem, 2.1vw, 2rem);
   font-weight: 500;
@@ -1097,7 +1155,7 @@ a:focus-visible {
   flex-direction: column;
   align-items: flex-start;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
 }
 
 .site-footer {
@@ -1107,7 +1165,7 @@ a:focus-visible {
   padding-bottom: 1.5rem;
   border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
 }
 
 .site-footer span:nth-child(2) {
@@ -1118,9 +1176,24 @@ a:focus-visible {
   text-align: right;
 }
 
+.site-footer strong,
+.site-footer small {
+  display: block;
+}
+
+.site-footer strong {
+  color: var(--ink);
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.site-footer small {
+  font-size: inherit;
+}
+
 @media (max-width: 1023px) {
   :root {
-    --section-space: clamp(7rem, 14vw, 9rem);
+    --section-space: clamp(6rem, 12vw, 8rem);
   }
 
   .hero {
@@ -1178,6 +1251,38 @@ a:focus-visible {
   }
 }
 
+@media (min-width: 768px) and (max-width: 899px) {
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .profile-visual {
+    min-height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .profile-monogram {
+    font-size: 22vw;
+  }
+
+  .about-stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    gap: 0.75rem;
+  }
+
+  .about-copy-panel {
+    grid-row: 1 / -1;
+  }
+
+  .workflow-note {
+    min-height: 0;
+  }
+}
+
 @media (max-width: 767px) {
   :root {
     --gutter: clamp(1rem, 4.6vw, 1.25rem);
@@ -1186,7 +1291,11 @@ a:focus-visible {
   }
 
   .site-header {
-    min-height: 5.5rem;
+    min-height: auto;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    row-gap: 0.2rem;
+    flex-wrap: wrap;
   }
 
   .identity-copy strong {
@@ -1194,15 +1303,20 @@ a:focus-visible {
   }
 
   .header-links {
-    gap: 0.9rem;
+    width: 100%;
+    justify-content: flex-start;
+    gap: clamp(0.8rem, 5vw, 1.5rem);
+    padding-top: 0.35rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.6875rem;
   }
 
   .header-link--résumé {
-    display: none;
+    display: inline-flex;
   }
 
   .hero {
-    padding-top: clamp(5rem, 19vw, 7rem);
+    padding-top: clamp(3.75rem, 14vw, 5.5rem);
     padding-bottom: 7rem;
   }
 
@@ -1211,11 +1325,17 @@ a:focus-visible {
   }
 
   .hero h1 {
-    max-width: none;
-    font-size: clamp(3rem, 13.2vw, 4.6rem);
-    letter-spacing: -0.065em;
+    width: 100%;
+    max-width: calc(100vw - (2 * var(--gutter)));
+    font-size: clamp(2.8rem, 12vw, 4.4rem);
+    letter-spacing: -0.072em;
     line-height: 0.96;
-    text-wrap: pretty;
+    text-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .hero h1 span {
+    display: block;
   }
 
   .hero-foot {
@@ -1230,6 +1350,10 @@ a:focus-visible {
     max-width: 22rem;
   }
 
+  .work-intro {
+    margin-top: 1rem;
+  }
+
   .scroll-cue {
     justify-self: auto;
   }
@@ -1241,7 +1365,9 @@ a:focus-visible {
   .work-grid {
     display: flex;
     flex-direction: column;
-    gap: 4.75rem;
+    width: 100%;
+    min-width: 0;
+    gap: clamp(3rem, 11vw, 4rem);
     padding-top: 2rem;
   }
 
@@ -1249,7 +1375,8 @@ a:focus-visible {
   .project--full,
   .project:nth-child(3),
   .project:nth-child(4) {
-    width: 100%;
+    flex: 0 0 100%;
+    width: calc(100vw - (2 * var(--gutter)));
     margin-top: 0;
   }
 
@@ -1273,7 +1400,7 @@ a:focus-visible {
   }
 
   .placeholder--ink .placeholder-mark {
-    font-size: clamp(3.5rem, 20vw, 5.5rem);
+    font-size: clamp(3.25rem, 18vw, 5rem);
   }
 
   .project-heading-row {
@@ -1285,9 +1412,14 @@ a:focus-visible {
     font-size: 1.125rem;
   }
 
+  .project-heading-row span {
+    flex: 0 0 auto;
+    font-size: 0.75rem;
+  }
+
   .project-description {
     max-width: 28rem;
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
   }
 
   .about-grid {
@@ -1324,7 +1456,7 @@ a:focus-visible {
   }
 
   .workflow-note {
-    min-height: 15rem;
+    min-height: 12.5rem;
   }
 
   .experience-layout {
@@ -1342,13 +1474,22 @@ a:focus-visible {
 
   .experience-statement {
     max-width: 12ch;
-    font-size: clamp(2.25rem, 11vw, 3.25rem);
+    font-size: clamp(2rem, 10vw, 2.8rem);
   }
 
   .experience-row {
     grid-template-columns: 2rem 1fr;
     min-height: 8.5rem;
     padding: 1.25rem 0;
+  }
+
+  .experience-role h3 {
+    font-size: 1.3rem;
+  }
+
+  .experience-role p,
+  .experience-row time {
+    font-size: 0.75rem;
   }
 
   .experience-row time {
@@ -1374,6 +1515,10 @@ a:focus-visible {
 
   .contact-actions {
     gap: 3rem;
+  }
+
+  .contact-support {
+    max-width: 22rem;
   }
 
   .contact-primary {
@@ -1403,11 +1548,21 @@ a:focus-visible {
   }
 
   .header-link--linkedin {
-    display: none;
+    display: inline-flex;
   }
 
   .header-links {
-    font-size: 0.75rem;
+    gap: 1rem;
+    font-size: 0.6875rem;
+  }
+
+  .identity {
+    gap: 0.5rem;
+  }
+
+  .avatar {
+    width: 2rem;
+    height: 2rem;
   }
 
   .hero h1 {
