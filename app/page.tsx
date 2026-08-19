@@ -4,11 +4,13 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { MotionController } from "@/components/MotionController";
 import { WorkGrid } from "@/components/work/WorkGrid";
 
 export default function Home() {
   return (
     <>
+      <MotionController />
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>

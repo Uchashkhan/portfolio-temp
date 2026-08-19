@@ -2,6 +2,7 @@ export function ProfileVisual() {
   return (
     <div
       className="profile-visual"
+      data-reveal="frame"
       role="img"
       aria-label="Temporary portrait placeholder for Apurba Jalal Uchash"
     >

@@ -20,7 +20,7 @@ export function AboutSection() {
       <div className="about-grid">
         <ProfileVisual />
 
-        <div className="about-stack">
+        <div className="about-stack" data-reveal="panel">
           <div className="about-copy-panel">
             <p className="about-lead">
               Hi, I&apos;m Uchash. I&apos;m a Product Designer focused on turning

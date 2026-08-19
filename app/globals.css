@@ -12,6 +12,7 @@
   --section-space: clamp(7.5rem, 13vw, 13.5rem);
   --radius: 0.75rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease: cubic-bezier(0.18, 0.72, 0.22, 1);
 }
 
 * {
@@ -162,8 +163,8 @@ a:focus-visible {
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  transition: background-color 260ms var(--ease), color 260ms var(--ease),
-    transform 320ms var(--ease);
+  transition: background-color 300ms var(--motion-ease),
+    color 300ms var(--motion-ease), transform 380ms var(--motion-ease);
 }
 
 .identity-copy {
@@ -199,21 +200,50 @@ a:focus-visible {
 }
 
 .hero-inner {
-  opacity: 0;
-  transform: translateY(0.75rem);
-  animation: hero-in 520ms var(--ease) 100ms forwards;
+  opacity: 1;
 }
 
-@keyframes hero-in {
+@keyframes hero-mark-in {
+  from {
+    opacity: 0;
+    letter-spacing: 0.18em;
+  }
+
   to {
     opacity: 1;
-    transform: translateY(0);
+    letter-spacing: 0.085em;
+  }
+}
+
+@keyframes hero-unmask {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: scaleY(1.035) skewY(0.7deg);
+  }
+
+  to {
+    clip-path: inset(0);
+    transform: scaleY(1) skewY(0);
+  }
+}
+
+@keyframes hero-details-in {
+  from {
+    clip-path: inset(0 0 0 12%);
+    opacity: 0;
+  }
+
+  to {
+    clip-path: inset(0);
+    opacity: 1;
   }
 }
 
 .hero-eyebrow {
   margin: 0 0 clamp(2rem, 3.5vw, 3.5rem);
+  opacity: 0;
   color: var(--muted);
+  animation: hero-mark-in 380ms var(--motion-ease) 80ms forwards;
 }
 
 .hero h1 {
@@ -224,6 +254,9 @@ a:focus-visible {
   letter-spacing: -0.067em;
   line-height: 0.96;
   text-wrap: balance;
+  clip-path: inset(0 0 100% 0);
+  transform-origin: left bottom;
+  animation: hero-unmask 560ms var(--motion-ease) 110ms forwards;
 }
 
 .hero-foot {
@@ -232,6 +265,8 @@ a:focus-visible {
   align-items: end;
   gap: 1rem;
   margin-top: clamp(3rem, 6.5vw, 6.5rem);
+  opacity: 0;
+  animation: hero-details-in 440ms var(--motion-ease) 400ms forwards;
 }
 
 .hero-foot > p {
@@ -278,6 +313,52 @@ a:focus-visible {
   font: inherit;
 }
 
+/* Editorial scroll reveals. Content stays visible until JS is ready. */
+.motion-ready [data-reveal="label"] {
+  clip-path: inset(0);
+  opacity: 1;
+  transition: clip-path 480ms var(--motion-ease), opacity 340ms ease-out;
+}
+
+.motion-ready [data-reveal="label"]:not(.is-visible) {
+  clip-path: inset(0 100% 0 0);
+  opacity: 0.35;
+}
+
+.motion-ready [data-reveal="frame"],
+.motion-ready [data-reveal="panel"],
+.motion-ready [data-reveal="copy"],
+.motion-ready [data-reveal="rows"],
+.motion-ready [data-reveal="contact"] {
+  clip-path: inset(0);
+  opacity: 1;
+  transform: scale(1);
+  transition: clip-path 620ms var(--motion-ease), opacity 420ms ease-out,
+    transform 620ms var(--motion-ease), filter 480ms var(--motion-ease);
+}
+
+.motion-ready [data-reveal="frame"]:not(.is-visible) {
+  clip-path: inset(0 100% 0 0);
+  transform: scale(0.985);
+}
+
+.motion-ready [data-reveal="panel"]:not(.is-visible) {
+  clip-path: inset(0 0 14% 0);
+  opacity: 0;
+  filter: blur(5px);
+}
+
+.motion-ready [data-reveal="copy"]:not(.is-visible),
+.motion-ready [data-reveal="rows"]:not(.is-visible) {
+  clip-path: inset(0 0 100% 0);
+}
+
+.motion-ready [data-reveal="contact"]:not(.is-visible) {
+  clip-path: inset(0 0 100% 0);
+  transform: scaleY(1.025);
+  transform-origin: left bottom;
+}
+
 /* Work */
 .work-section {
   padding-top: 2rem;
@@ -319,7 +400,9 @@ a:focus-visible {
   border-radius: var(--radius);
   background: var(--surface);
   isolation: isolate;
-  transition: border-color 260ms var(--ease), transform 360ms var(--ease);
+  clip-path: inset(0);
+  transition: border-color 300ms var(--motion-ease),
+    clip-path 620ms var(--motion-ease), transform 420ms var(--motion-ease);
 }
 
 .ratio--portrait {
@@ -336,7 +419,8 @@ a:focus-visible {
 
 .project-image {
   object-fit: cover;
-  transition: filter 420ms var(--ease), transform 420ms var(--ease);
+  transition: filter 460ms var(--motion-ease),
+    transform 460ms var(--motion-ease);
 }
 
 .project-placeholder {
@@ -346,7 +430,8 @@ a:focus-visible {
   flex-direction: column;
   justify-content: space-between;
   padding: clamp(1rem, 2vw, 1.75rem);
-  transition: filter 420ms var(--ease), transform 420ms var(--ease);
+  transition: filter 460ms var(--motion-ease),
+    transform 460ms var(--motion-ease);
 }
 
 .placeholder-top,
@@ -376,7 +461,7 @@ a:focus-visible {
 }
 
 .placeholder-mark > span {
-  transition: transform 360ms var(--ease);
+  transition: transform 420ms var(--motion-ease);
 }
 
 .placeholder--ink {
@@ -405,7 +490,7 @@ a:focus-visible {
   border: 1px solid rgba(23, 23, 22, 0.15);
   border-radius: 50%;
   content: "";
-  transition: transform 400ms var(--ease);
+  transition: transform 460ms var(--motion-ease);
 }
 
 .placeholder--paper .placeholder-mark {
@@ -432,7 +517,7 @@ a:focus-visible {
   border: 1px solid rgba(23, 23, 22, 0.18);
   border-radius: 50%;
   content: "";
-  transition: transform 400ms var(--ease);
+  transition: transform 460ms var(--motion-ease);
 }
 
 .placeholder--stone::before {
@@ -461,7 +546,7 @@ a:focus-visible {
   height: 1px;
   background: currentColor;
   transform-origin: center;
-  transition: transform 360ms var(--ease);
+  transition: transform 420ms var(--motion-ease);
 }
 
 .placeholder--graphite {
@@ -476,7 +561,7 @@ a:focus-visible {
   border-radius: 50% 50% 0 0;
   content: "";
   transform-origin: bottom center;
-  transition: transform 400ms var(--ease);
+  transition: transform 460ms var(--motion-ease);
 }
 
 .placeholder--graphite .placeholder-mark {
@@ -497,7 +582,7 @@ a:focus-visible {
   width: 1px;
   background: rgba(23, 23, 22, 0.13);
   content: "";
-  transition: transform 400ms var(--ease);
+  transition: transform 460ms var(--motion-ease);
 }
 
 .placeholder--warm .placeholder-mark {
@@ -508,6 +593,26 @@ a:focus-visible {
 
 .project-copy {
   padding-top: 1rem;
+  opacity: 1;
+  filter: blur(0);
+  transition: opacity 420ms ease-out 90ms,
+    filter 480ms var(--motion-ease) 90ms;
+}
+
+.motion-ready .project[data-reveal="project"]:not(.is-visible) .project-visual {
+  clip-path: inset(0 100% 0 0);
+  transform: scale(0.985);
+}
+
+.motion-ready
+  .project[data-reveal="project"]:nth-child(even):not(.is-visible)
+  .project-visual {
+  clip-path: inset(0 0 0 100%);
+}
+
+.motion-ready .project[data-reveal="project"]:not(.is-visible) .project-copy {
+  opacity: 0;
+  filter: blur(4px);
 }
 
 .project-heading-row {
@@ -528,7 +633,8 @@ a:focus-visible {
   font-weight: 520;
   letter-spacing: -0.025em;
   line-height: 1.25;
-  transition: letter-spacing 300ms var(--ease), transform 300ms var(--ease);
+  transition: letter-spacing 340ms var(--motion-ease),
+    transform 380ms var(--motion-ease);
 }
 
 @media (hover: hover) and (pointer: fine) {

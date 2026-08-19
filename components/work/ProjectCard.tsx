@@ -54,6 +54,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <article
       className={`project project--${project.gridSpan} project--${project.aspectRatio}`}
+      data-reveal="project"
     >
       {project.href ? (
         <a href={project.href} className="project-link">

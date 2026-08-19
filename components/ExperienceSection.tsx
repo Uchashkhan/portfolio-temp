@@ -13,7 +13,7 @@ export function ExperienceSection() {
       </SectionLabel>
 
       <div className="experience-layout">
-        <div className="experience-intro">
+        <div className="experience-intro" data-reveal="copy">
           <p className="experience-statement">
             Growing through products of increasing depth and complexity.
           </p>
@@ -22,7 +22,7 @@ export function ExperienceSection() {
           </a>
         </div>
 
-        <ol className="experience-list">
+        <ol className="experience-list" data-reveal="rows">
           {experience.map((item, index) => (
             <li className="experience-row" key={`${item.company}-${item.period}`}>
               <span className="experience-number" aria-hidden="true">

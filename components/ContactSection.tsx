@@ -7,7 +7,7 @@ export function ContactSection() {
       <SectionLabel id="contact" index="04">
         Contact
       </SectionLabel>
-      <div className="contact-layout">
+      <div className="contact-layout" data-reveal="contact">
         <p className="contact-statement">Have a product problem worth solving?</p>
         <div className="contact-actions">
           <a className="contact-primary" href={`mailto:${siteConfig.email}`}>
