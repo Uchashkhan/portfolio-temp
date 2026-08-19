@@ -125,6 +125,19 @@ a:focus-visible {
   transform: translate(-50%, -50%) scale(0.7);
 }
 
+.custom-cursor.is-on-dark {
+  border-color: rgba(247, 247, 245, 0.78);
+}
+
+.custom-cursor.is-active.is-on-dark {
+  border-color: var(--background);
+  background: var(--background);
+}
+
+.custom-cursor.is-active.is-on-dark .custom-cursor-dot {
+  background: var(--ink);
+}
+
 @media (hover: hover) and (pointer: fine) {
   html.custom-cursor-ready,
   html.custom-cursor-ready body,
@@ -1071,8 +1084,33 @@ a:focus-visible {
   align-items: start;
   gap: 1rem;
   min-height: 8.25rem;
+  margin-inline: 0;
   padding: 1.35rem 0;
+  padding-inline: 0;
   border-bottom: 1px solid var(--border);
+  border-radius: 0.5rem;
+  transition: background-color 280ms var(--motion-ease),
+    border-color 280ms var(--motion-ease), color 280ms var(--motion-ease),
+    margin-inline 380ms var(--motion-ease), padding-inline 380ms var(--motion-ease),
+    transform 380ms var(--motion-ease);
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experience-row:hover {
+    margin-inline: 0.75rem;
+    padding-inline: 1rem;
+    border-bottom-color: transparent;
+    background: var(--ink);
+    color: var(--background);
+    transform: translateX(0.08rem);
+  }
+
+  .experience-row:hover .experience-number,
+  .experience-row:hover time,
+  .experience-row:hover .experience-role p {
+    color: rgba(247, 247, 245, 0.68);
+  }
 }
 
 .experience-number,

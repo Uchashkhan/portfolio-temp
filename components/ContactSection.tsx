@@ -8,7 +8,7 @@ export function ContactSection() {
         Contact
       </SectionLabel>
       <div className="contact-layout" data-reveal="contact">
-        <p className="contact-statement">Let&apos;s build thoughtful products together.</p>
+        <p className="contact-statement">Let&apos;s make something useful.</p>
         <div className="contact-actions">
           <p className="contact-support">
             If you&apos;re building a thoughtful product, I&apos;d love to hear about it.

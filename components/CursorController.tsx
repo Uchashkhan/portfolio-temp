@@ -33,13 +33,19 @@ export function CursorController() {
 
       const element = event.target as Element | null;
       const isInteractive = Boolean(
-        element?.closest("a, button, .project-visual"),
+        element?.closest("a, button, .project-visual, .experience-row"),
+      );
+      const isOnDarkSurface = Boolean(
+        element?.closest(
+          ".experience-row, .profile-visual, .placeholder--ink, .placeholder--graphite",
+        ),
       );
       cursor.classList.toggle("is-active", isInteractive);
+      cursor.classList.toggle("is-on-dark", isOnDarkSurface);
     };
 
     const hide = () => {
-      cursor.classList.remove("is-visible", "is-active");
+      cursor.classList.remove("is-visible", "is-active", "is-on-dark");
     };
 
     root.classList.add("custom-cursor-ready");

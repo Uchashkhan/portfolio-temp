@@ -22,8 +22,8 @@ export const projects: Project[] = [
     year: "2026",
     description:
       "Making everyday learning easier to navigate, continue, and act on.",
-    image: null,
-    imageAlt: "Shikho app redesign project cover",
+    image: "/projects/shikho-app-redesign.png",
+    imageAlt: "Shikho app redesign shown on a mobile phone",
     aspectRatio: "portrait",
     gridSpan: "narrow",
     theme: "ink",
@@ -38,8 +38,8 @@ export const projects: Project[] = [
     year: "2026",
     description:
       "Turning student performance data into something clearer, more useful, and motivating.",
-    image: null,
-    imageAlt: "Shikho report card project cover",
+    image: "/projects/shikho-report-card.png",
+    imageAlt: "Shikho report card learning analytics screens",
     aspectRatio: "landscape",
     gridSpan: "wide",
     theme: "paper",
@@ -54,8 +54,8 @@ export const projects: Project[] = [
     year: "2024–2025",
     description:
       "Making complex engineering workflows easier to move through.",
-    image: null,
-    imageAlt: "CADEA CAD workflows project cover",
+    image: "/projects/cadea-cad-workflows-v2.png",
+    imageAlt: "CADEA water infrastructure design workflow interface",
     aspectRatio: "landscape",
     gridSpan: "wide",
     theme: "stone",
@@ -70,8 +70,8 @@ export const projects: Project[] = [
     year: "2023–2024",
     description:
       "Simplifying how people explore and complete digital investment journeys.",
-    image: null,
-    imageAlt: "Bini investment platform project cover",
+    image: "/projects/bini-investment-platform.png",
+    imageAlt: "Bini investment platform shown on a mobile phone",
     aspectRatio: "portrait",
     gridSpan: "narrow",
     theme: "graphite",
