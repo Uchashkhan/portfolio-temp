@@ -5,6 +5,7 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { MoreWorkCta } from "@/components/MoreWorkCta";
 import { MotionController } from "@/components/MotionController";
 import { WorkGrid } from "@/components/work/WorkGrid";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <main id="main-content">
         <Hero />
         <WorkGrid />
+        <MoreWorkCta />
         <AboutSection />
         <ExperienceSection />
         <ContactSection />

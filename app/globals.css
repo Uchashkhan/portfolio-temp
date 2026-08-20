@@ -503,6 +503,43 @@ a:focus-visible {
   margin-top: clamp(1.5rem, 4vw, 4.5rem);
 }
 
+.more-work {
+  padding-top: clamp(4rem, 7vw, 7rem);
+  padding-bottom: clamp(1rem, 2vw, 2.5rem);
+}
+
+.more-work-inner {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.more-work-inner > div {
+  max-width: 28rem;
+}
+
+.more-work-inner .eyebrow {
+  margin: 0;
+  color: var(--muted);
+}
+
+.more-work-inner p:not(.eyebrow) {
+  margin: .75rem 0 0;
+  color: var(--muted);
+  font-size: .9375rem;
+  line-height: 1.55;
+}
+
+.more-work-link {
+  flex: 0 0 auto;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.35vw, 1.125rem);
+  font-weight: 500;
+}
+
 .project-visual {
   position: relative;
   overflow: hidden;
@@ -1404,6 +1441,22 @@ a:focus-visible {
     min-width: 0;
     gap: clamp(3rem, 11vw, 4rem);
     padding-top: 2rem;
+  }
+
+  .more-work {
+    padding-top: 3.75rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .more-work-inner {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .85rem;
+  }
+
+  .more-work-link {
+    min-height: 2.75rem;
   }
 
   .project,
