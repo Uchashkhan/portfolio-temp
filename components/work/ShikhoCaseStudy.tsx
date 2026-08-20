@@ -25,33 +25,15 @@ export function ShikhoCaseStudy() {
           ))}
         </dl>
         <div className="case-hero-visual" data-reveal="frame">
-          <div className="case-hero-screen case-hero-screen--primary">
-            <Image
-              src="/projects/shikho-case/priority-subjects.png"
-              alt="Shikho mobile homepage with prioritized subjects"
-              width={381}
-              height={741}
-              priority
-            />
-          </div>
-          <div className="case-hero-screen case-hero-screen--routine">
-            <Image
-              src="/projects/shikho-case/routine.png"
-              alt="Shikho daily routine module"
-              width={374}
-              height={178}
-              priority
-            />
-          </div>
-          <div className="case-hero-screen case-hero-screen--progress">
-            <Image
-              src="/projects/shikho-case/course-progress.png"
-              alt="Shikho course progress module"
-              width={372}
-              height={381}
-              priority
-            />
-          </div>
+          <Image
+            className="case-hero-overview"
+            src="/projects/shikho-case/homepage-overview.png"
+            alt="Shikho homepage showing the student overview, routine, subjects, course progress and features"
+            width={3266}
+            height={1680}
+            priority
+            sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1440px) calc(100vw - 4rem), 1600px"
+          />
         </div>
       </section>
 
@@ -74,17 +56,14 @@ export function ShikhoCaseStudy() {
         </div>
         <div className="case-routine-visual" data-reveal="frame">
           <div className="case-routine-main">
-            <Image src={routineStory.images[0]} alt={routineStory.alt[0]} width={374} height={178} />
-          </div>
-          <div className="case-routine-cards">
-            <Image src={routineStory.images[1]} alt={routineStory.alt[1]} width={396} height={128} />
+            <Image src={routineStory.images[0]} alt={routineStory.alt[0]} width={2992} height={1972} />
           </div>
         </div>
       </section>
 
       <section className="case-story case-story--subjects page-shell section-block">
         <div className="case-subjects-visual" data-reveal="frame">
-          <Image src={subjectsStory.images[0]} alt={subjectsStory.alt[0]} width={381} height={741} />
+          <Image src={subjectsStory.images[0]} alt={subjectsStory.alt[0]} width={976} height={1846} />
         </div>
         <div className="case-story-copy" data-reveal="copy">
           <span className="eyebrow">{subjectsStory.number} / Design decision</span>
@@ -95,8 +74,12 @@ export function ShikhoCaseStudy() {
 
       <section className="case-story case-story--progress page-shell section-block">
         <div className="case-progress-visual" data-reveal="frame">
-          <div><Image src={progressStory.images[0]} alt={progressStory.alt[0]} width={372} height={381} /></div>
-          <div><Image src={progressStory.images[1]} alt={progressStory.alt[1]} width={373} height={389} /></div>
+          <Image
+            src="/projects/shikho-case/progress-features.png"
+            alt="Shikho course progress and feature modules"
+            width={2992}
+            height={1972}
+          />
         </div>
         <div className="case-story-copy" data-reveal="copy">
           <span className="eyebrow">{progressStory.number} / Design decision</span>
@@ -111,10 +94,10 @@ export function ShikhoCaseStudy() {
           <p>{shikhoCaseStudy.system}</p>
           <div className="case-system-screen">
             <Image
-              src="/projects/shikho-case/home-hero.png"
-              alt="Shikho mobile homepage upper area"
-              width={412}
-              height={375}
+              src="/projects/shikho-case/home-system-state.png"
+              alt="Shikho mobile homepage welcome and profile setup state"
+              width={1209}
+              height={863}
             />
           </div>
         </div>

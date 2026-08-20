@@ -49,7 +49,7 @@ export const shikhoCaseStudy = {
     },
   ],
   system:
-    "The homepage was designed as a system, not a fixed screen. Routine and live activities can change in prominence when relevant; conditional modules can appear, disappear or yield space; and the upper area collapses on scroll to reveal more content, then returns when a student changes direction.",
+    "A dynamic homepage where routine and live activities move forward when relevant, while conditional modules make room and the upper area collapses on scroll to reveal more content.",
   role: [
     "Defined information hierarchy and content priority across homepage modules.",
     "Shaped module structure, interaction behaviour and changing UI states.",
