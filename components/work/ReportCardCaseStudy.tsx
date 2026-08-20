@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { reportCardCaseStudy } from "@/data/report-card-case-study";
+import { projects } from "@/data/projects";
 
 function ReportVisual({ variant, alt, src }: { variant: string; alt: string; src: string }) {
   return (
@@ -11,6 +12,8 @@ function ReportVisual({ variant, alt, src }: { variant: string; alt: string; src
 
 export function ReportCardCaseStudy() {
   const [hierarchy, clarity, action] = reportCardCaseStudy.stories;
+  const nextProject = projects.find((project) => project.slug === "cadea-cad-workflows");
+  const isExternalNextProject = nextProject?.href?.startsWith("http");
 
   return (
     <main id="main-content" className="case-study report-case">
@@ -54,7 +57,19 @@ export function ReportCardCaseStudy() {
         <div className="report-leaderboard-visual" data-reveal="frame"><ReportVisual variant="leaderboard" src="/projects/report-card-case/report-leaderboard-detail.png" alt="Shikho Report Card nationwide leaderboard" /></div>
       </section>
       <section className="case-closing page-shell section-block"><div data-reveal="copy"><span className="eyebrow">My role</span><ul>{reportCardCaseStudy.role.map((item) => <li key={item}>{item}</li>)}</ul></div><div data-reveal="copy"><span className="eyebrow">Outcome</span><p>{reportCardCaseStudy.outcome}</p></div></section>
-      <section className="case-next page-shell section-block" data-reveal="contact"><span className="eyebrow">Next project</span><span className="case-next-disabled">CADEA — CAD Workflows <span aria-hidden="true">→</span></span></section>
+      <section className="case-next page-shell section-block" data-reveal="contact">
+        <span className="eyebrow">Next project</span>
+        {nextProject?.href && (
+          <a
+            className="case-next-link"
+            href={nextProject.href}
+            target={isExternalNextProject ? "_blank" : undefined}
+            rel={isExternalNextProject ? "noopener noreferrer" : undefined}
+          >
+            {nextProject.title} <span aria-hidden="true">→</span>
+          </a>
+        )}
+      </section>
     </main>
   );
 }

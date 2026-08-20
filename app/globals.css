@@ -1791,9 +1791,10 @@ a:focus-visible {
 .case-closing li::before { color: var(--faint); content: "—"; }
 .case-closing p { margin-top: 1.5rem; }
 .case-next { display: grid; gap: 1rem; margin-top: clamp(1.5rem,5vw,5rem); padding-top: clamp(3rem,6vw,6rem); border-top: 1px solid var(--border); }
-.case-next-disabled { color: var(--ink); font-size: clamp(2.4rem,5vw,5.5rem); font-weight: 470; letter-spacing: -.07em; line-height: .95; }
-.case-next-disabled span { display: inline-block; transition: transform 260ms var(--ease); }
-@media (hover: hover) and (pointer: fine) { .case-next-disabled:hover span { transform: translateX(.25rem); } }
+.case-next-link { color: var(--ink); font-size: clamp(2.4rem,5vw,5.5rem); font-weight: 470; letter-spacing: -.07em; line-height: .95; text-decoration: none; }
+.case-next-link span { display: inline-block; transition: transform 260ms var(--ease); }
+.case-next-link:focus-visible { border-radius: .125rem; outline: 2px solid var(--ink); outline-offset: .35rem; }
+@media (hover: hover) and (pointer: fine) { .case-next-link:hover span { transform: translateX(.25rem); } }
 
 @media (max-width: 767px) {
   .case-back { margin-bottom: 3.5rem; }
@@ -1826,7 +1827,7 @@ a:focus-visible {
   .case-system-screen { width: 100%; }
   .case-system p { font-size: clamp(1.55rem,7.8vw,2.2rem); }
   .case-closing > div + div { margin-top: 3rem; }
-  .case-next-disabled { font-size: clamp(2.65rem,12.5vw,4rem); }
+  .case-next-link { font-size: clamp(2.65rem,12.5vw,4rem); }
 }
 
 /* Keep Report Card's story type and narrow-screen constraints after shared case rules. */

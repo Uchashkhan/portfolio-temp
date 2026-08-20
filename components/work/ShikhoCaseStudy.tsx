@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { shikhoCaseStudy } from "@/data/shikho-case-study";
+import { projects } from "@/data/projects";
 
 export function ShikhoCaseStudy() {
   const [routineStory, subjectsStory, progressStory] = shikhoCaseStudy.stories;
+  const nextProject = projects.find((project) => project.slug === "shikho-report-card");
 
   return (
     <main id="main-content" className="case-study">
@@ -118,7 +120,11 @@ export function ShikhoCaseStudy() {
 
       <section className="case-next page-shell section-block" data-reveal="contact">
         <span className="eyebrow">Next project</span>
-        <span className="case-next-disabled">Shikho Report Card <span aria-hidden="true">→</span></span>
+        {nextProject?.href && (
+          <a className="case-next-link" href={nextProject.href}>
+            {nextProject.title} <span aria-hidden="true">→</span>
+          </a>
+        )}
       </section>
     </main>
   );
