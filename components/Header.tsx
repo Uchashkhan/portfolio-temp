@@ -10,11 +10,8 @@ export function Header() {
   return (
     <header className="site-header page-shell" aria-label="Portfolio header">
       <a className="identity" href="#main-content" aria-label="Go to introduction">
-        <span className="avatar" aria-hidden="true">
-          AU
-        </span>
         <span className="identity-copy">
-          <strong>{siteConfig.name}</strong>
+          <strong>{siteConfig.headerName}</strong>
           <span>{siteConfig.role}</span>
         </span>
       </a>
