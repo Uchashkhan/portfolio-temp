@@ -37,6 +37,7 @@ function ProjectVisual({ project, index }: ProjectCardProps) {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const isExternal = project.href?.startsWith("http");
   const content = (
     <>
       <ProjectVisual project={project} index={index} />
@@ -57,7 +58,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       data-reveal="project"
     >
       {project.href ? (
-        <a href={project.href} className="project-link">
+        <a
+          href={project.href}
+          className="project-link"
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+        >
           {content}
         </a>
       ) : (

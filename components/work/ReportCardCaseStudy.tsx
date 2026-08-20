@@ -15,14 +15,14 @@ export function ReportCardCaseStudy() {
   return (
     <main id="main-content" className="case-study report-case">
       <section className="case-hero page-shell">
-        <a className="case-back text-link" href="/#selected-work"><span aria-hidden="true">←</span> Selected work</a>
-        <p className="eyebrow case-eyebrow">{reportCardCaseStudy.eyebrow}</p>
-        <div className="case-hero-copy">
+        <a className="case-back text-link" href="/#selected-work" data-reveal="copy"><span aria-hidden="true">←</span> Selected work</a>
+        <p className="eyebrow case-eyebrow" data-reveal="label">{reportCardCaseStudy.eyebrow}</p>
+        <div className="case-hero-copy" data-reveal="copy">
           <h1>{reportCardCaseStudy.title}</h1>
           <p className="case-hero-headline">{reportCardCaseStudy.headline}</p>
           <p className="case-hero-intro">{reportCardCaseStudy.introduction}</p>
         </div>
-        <dl className="case-metadata">
+        <dl className="case-metadata" data-reveal="rows">
           {reportCardCaseStudy.metadata.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
         </dl>
         <div className="report-hero-visual" data-reveal="frame">

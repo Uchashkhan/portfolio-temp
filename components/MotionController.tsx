@@ -23,9 +23,11 @@ export function MotionController() {
       revealGroups.set(trigger, group);
     });
 
+    root.classList.add("motion-ready");
+
     if (reducedMotion || !("IntersectionObserver" in window)) {
       elements.forEach((element) => element.classList.add("is-visible"));
-      return;
+      return () => root.classList.remove("motion-ready");
     }
 
     const observer = new IntersectionObserver(
@@ -48,13 +50,13 @@ export function MotionController() {
       const bounds = trigger.getBoundingClientRect();
 
       if (bounds.top < window.innerHeight * 0.92) {
-        group.forEach((element) => element.classList.add("is-visible"));
+        requestAnimationFrame(() => {
+          group.forEach((element) => element.classList.add("is-visible"));
+        });
       } else {
         observer.observe(trigger);
       }
     });
-
-    root.classList.add("motion-ready");
 
     return () => {
       observer.disconnect();

@@ -439,6 +439,8 @@ a:focus-visible {
 .motion-ready [data-reveal="copy"]:not(.is-visible),
 .motion-ready [data-reveal="rows"]:not(.is-visible) {
   clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transform: translateY(.75rem);
 }
 
 .motion-ready [data-reveal="contact"]:not(.is-visible) {

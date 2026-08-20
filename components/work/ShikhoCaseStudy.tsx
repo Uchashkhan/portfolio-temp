@@ -7,16 +7,16 @@ export function ShikhoCaseStudy() {
   return (
     <main id="main-content" className="case-study">
       <section className="case-hero page-shell">
-        <a className="case-back text-link" href="/#selected-work">
+        <a className="case-back text-link" href="/#selected-work" data-reveal="copy">
           <span aria-hidden="true">←</span> Selected work
         </a>
-        <p className="eyebrow case-eyebrow">{shikhoCaseStudy.eyebrow}</p>
-        <div className="case-hero-copy">
+        <p className="eyebrow case-eyebrow" data-reveal="label">{shikhoCaseStudy.eyebrow}</p>
+        <div className="case-hero-copy" data-reveal="copy">
           <h1>{shikhoCaseStudy.title}</h1>
           <p className="case-hero-headline">{shikhoCaseStudy.headline}</p>
           <p className="case-hero-intro">{shikhoCaseStudy.introduction}</p>
         </div>
-        <dl className="case-metadata">
+        <dl className="case-metadata" data-reveal="rows">
           {shikhoCaseStudy.metadata.map(([label, value]) => (
             <div key={label}>
               <dt>{label}</dt>
