@@ -9,7 +9,7 @@ const headerLinks = [
 export function Header() {
   return (
     <header className="site-header page-shell" aria-label="Portfolio header">
-      <a className="identity" href="#main-content" aria-label="Go to introduction">
+      <a className="identity" href="/" aria-label="Go to homepage">
         <span className="identity-copy">
           <strong>{siteConfig.headerName}</strong>
           <span>{siteConfig.role}</span>
