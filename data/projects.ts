@@ -79,20 +79,4 @@ export const projects: Project[] = [
     featured: true,
     monogram: "BINI / 04",
   },
-  {
-    title: "Bhorer Kagoj Prokashan",
-    slug: "bhorer-kagoj-prokashan",
-    category: "UX/UI · E-commerce",
-    year: "Earlier Work",
-    description:
-      "Improving how people discover and purchase books online.",
-    image: null,
-    imageAlt: "Bhorer Kagoj Prokashan project cover",
-    aspectRatio: "wide",
-    gridSpan: "full",
-    theme: "warm",
-    href: null,
-    featured: false,
-    monogram: "BKP / ARCHIVE",
-  },
 ];

@@ -2,13 +2,15 @@ import { SectionLabel } from "@/components/SectionLabel";
 import { ProfileVisual } from "./ProfileVisual";
 
 const details = [
-  { label: "Currently", value: "Product Designer\nShikho" },
+  { label: "Currently", value: "Product Designer · Shikho" },
   { label: "Based in", value: "Dhaka, Bangladesh" },
   {
     label: "Focus",
-    value: "Product Design\nInteraction Design\nProduct Thinking",
+    value: "Product Design · Interaction Design · Product Thinking",
   },
 ];
+
+const domains = ["EdTech", "FinTech", "B2B / Engineering Software", "E-commerce"];
 
 export function AboutSection() {
   return (
@@ -22,16 +24,8 @@ export function AboutSection() {
 
         <div className="about-stack" data-reveal="panel">
           <div className="about-copy-panel">
-            <p className="about-lead">I like making complicated things feel obvious.</p>
-            <p>
-              I&apos;m Uchash, a Product Designer based in Dhaka.
-            </p>
-            <p>
-              I&apos;ve worked across <strong>EdTech, FinTech, engineering software, and e-commerce</strong> — often on products with a lot happening beneath the surface.
-            </p>
-            <p>
-              I enjoy finding the structure inside that complexity, removing what gets in the way, and shaping experiences that feel natural to use.
-            </p>
+            <p className="about-greeting">Hi, I&apos;m Uchash.</p>
+            <p>I&apos;m a Product Designer based in Dhaka, currently working at Shikho. I&apos;ve designed products across education, fintech, engineering software and e-commerce — from consumer mobile experiences to tools built for technical users.</p>
           </div>
 
           <dl className="about-details">
@@ -43,11 +37,11 @@ export function AboutSection() {
             ))}
           </dl>
 
-          <div className="workflow-note">
-            <span className="eyebrow">How I work</span>
-            <p>
-              I use AI-assisted prototyping and design-to-code workflows to move faster from <strong>idea → prototype → product</strong> — without treating speed as a substitute for design judgment.
-            </p>
+          <div className="across-panel">
+            <span className="eyebrow">Across</span>
+            <ul>
+              {domains.map((domain) => <li key={domain}>{domain}</li>)}
+            </ul>
           </div>
         </div>
       </div>

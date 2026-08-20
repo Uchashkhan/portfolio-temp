@@ -1,22 +1,10 @@
 export function ProfileVisual() {
   return (
-    <div
-      className="profile-visual"
-      data-reveal="frame"
-      role="img"
-      aria-label="Temporary portrait placeholder for Apurba Jalal Uchash"
-    >
-      <div className="profile-visual-top">
-        <span>Portrait / pending</span>
-        <span>Dhaka · BD</span>
-      </div>
-      <div className="profile-monogram" aria-hidden="true">
-        <span>A</span>
-        <span>U</span>
-      </div>
+    <div className="profile-visual" data-reveal="frame">
+      <p className="profile-statement">I like making complicated things feel obvious.</p>
       <div className="profile-visual-bottom">
-        <span>Apurba Jalal Uchash</span>
         <span>Product Designer</span>
+        <span>Dhaka · Bangladesh</span>
       </div>
     </div>
   );

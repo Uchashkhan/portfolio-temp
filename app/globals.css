@@ -155,7 +155,6 @@ a:focus-visible {
 .section-label,
 .placeholder-top,
 .placeholder-bottom,
-.profile-visual-top,
 .profile-visual-bottom {
   font-size: 0.6875rem;
   font-weight: 500;
@@ -362,8 +361,7 @@ a:focus-visible {
 }
 
 .hero-foot > p strong,
-.about-copy-panel strong,
-.workflow-note strong {
+.about-copy-panel strong {
   color: var(--ink);
   font-weight: 550;
 }
@@ -908,10 +906,10 @@ a:focus-visible {
 
 .profile-visual::before {
   position: absolute;
-  width: 72%;
+  width: 68%;
   aspect-ratio: 1;
-  top: 50%;
-  left: 50%;
+  top: 60%;
+  left: 62%;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 50%;
   content: "";
@@ -920,17 +918,16 @@ a:focus-visible {
 
 .profile-visual::after {
   position: absolute;
-  width: 48%;
+  width: 43%;
   aspect-ratio: 1;
-  top: 50%;
-  left: 50%;
+  top: 60%;
+  left: 62%;
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 50%;
   content: "";
   transform: translate(-50%, -50%);
 }
 
-.profile-visual-top,
 .profile-visual-bottom {
   position: relative;
   z-index: 1;
@@ -939,20 +936,15 @@ a:focus-visible {
   gap: 1rem;
 }
 
-.profile-monogram {
+.profile-statement {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(8rem, 24vw, 24rem);
-  font-weight: 430;
-  letter-spacing: -0.15em;
-  line-height: 0.65;
-}
-
-.profile-monogram span:last-child {
-  color: #8e908c;
+  max-width: 10.5ch;
+  margin: 0;
+  font-size: clamp(3.2rem, 6.1vw, 7.1rem);
+  font-weight: 470;
+  letter-spacing: -0.075em;
+  line-height: .91;
 }
 
 .about-stack {
@@ -964,7 +956,7 @@ a:focus-visible {
 
 .about-copy-panel,
 .about-details,
-.workflow-note {
+.across-panel {
   margin: 0;
   padding: clamp(1.5rem, 2.8vw, 2.5rem);
   border: 1px solid var(--border);
@@ -984,11 +976,13 @@ a:focus-visible {
   line-height: 1.6;
 }
 
-.about-copy-panel .about-lead {
+.about-copy-panel .about-greeting {
+  margin: 0;
   color: var(--ink);
-  font-size: clamp(1.35rem, 2.25vw, 2.15rem);
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  font-weight: 470;
   letter-spacing: -0.045em;
-  line-height: 1.13;
+  line-height: 1.08;
 }
 
 .detail-row {
@@ -1020,23 +1014,30 @@ a:focus-visible {
   color: var(--muted);
 }
 
-.workflow-note {
+.across-panel {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 11.5rem;
+  min-height: 12rem;
   background: #deded8;
 }
 
-.workflow-note .eyebrow {
+.across-panel .eyebrow {
   color: var(--muted);
 }
 
-.workflow-note p {
-  max-width: 28rem;
+.across-panel ul {
+  display: grid;
+  gap: .7rem;
   margin: 2rem 0 0;
-  font-size: 0.9375rem;
-  line-height: 1.55;
+  padding: 0;
+  list-style: none;
+}
+
+.across-panel li {
+  color: var(--ink);
+  font-size: clamp(.95rem, 1.1vw, 1.05rem);
+  line-height: 1.3;
 }
 
 /* Experience */
@@ -1301,10 +1302,6 @@ a:focus-visible {
     aspect-ratio: 16 / 10;
   }
 
-  .profile-monogram {
-    font-size: 22vw;
-  }
-
   .about-stack {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1316,7 +1313,7 @@ a:focus-visible {
     grid-row: 1 / -1;
   }
 
-  .workflow-note {
+  .across-panel {
     min-height: 0;
   }
 }
@@ -1473,10 +1470,6 @@ a:focus-visible {
     aspect-ratio: 4 / 5;
   }
 
-  .profile-monogram {
-    font-size: 38vw;
-  }
-
   .about-stack {
     display: flex;
     flex-direction: column;
@@ -1485,16 +1478,17 @@ a:focus-visible {
 
   .about-copy-panel,
   .about-details,
-  .workflow-note {
+  .across-panel {
     padding: 1.5rem;
   }
 
-  .about-copy-panel .about-lead {
-    font-size: 1.65rem;
+  .profile-statement {
+    max-width: 11.2ch;
+    font-size: clamp(2.8rem, 11.7vw, 4.2rem);
   }
 
-  .workflow-note {
-    min-height: 12.5rem;
+  .across-panel {
+    min-height: 0;
   }
 
   .experience-layout {
