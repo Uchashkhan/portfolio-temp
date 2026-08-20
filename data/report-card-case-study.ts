@@ -34,7 +34,7 @@ export const reportCardCaseStudy = {
     },
   ],
   system:
-    "The Report Card is structured around different quarters, performance trends, learning activity, and varying levels of available data. It includes focused areas, detailed drill-down, leaderboard context, and an empty state so the experience remains understandable even when a student does not yet have a complete report or model-test data.",
+    "The Report Card adapts across quarters and varying data levels, using trends, drill-downs and focus areas to keep progress understandable.",
   role: [
     "Led the end-to-end UI design through productisation.",
     "Structured the hierarchy across overview, subject, chapter, and topic-level performance.",

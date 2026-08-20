@@ -1586,24 +1586,23 @@ a:focus-visible {
 .report-story { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: center; gap: clamp(2rem, 6vw, 7rem) clamp(1rem, 2vw, 2.5rem); }
 .report-story .case-story-copy { max-width: 28rem; }
 .report-story--hierarchy .case-story-copy, .report-story--action .case-story-copy { grid-column: 1 / span 4; }
-.report-hierarchy-visual { display: grid; grid-column: 6 / -1; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(1rem,2vw,2rem); min-height: clamp(25rem,40vw,44rem); padding: clamp(1.25rem,4vw,4rem); overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: #f0f0ed; }
+.report-hierarchy-visual { display: block; grid-column: 6 / -1; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: #f0f0ed; }
+.report-hierarchy-visual > img { display: block; width: 100%; height: auto; }
 .report-visual { position: relative; overflow: hidden; border: 1px solid rgba(23,23,22,.09); border-radius: .75rem; background: #140937; }
 .report-visual img { object-fit: cover; }
 .report-visual--overview { aspect-ratio: 3 / 4; }
 .report-visual--overview img { object-position: 50% 28%; }
 .report-visual--detail { aspect-ratio: 3 / 4; transform: translateY(11%); }
 .report-visual--detail img { object-position: 51% 34%; }
-.report-story--clarity .report-clarity-visual { grid-column: 1 / span 7; min-height: clamp(23rem,37vw,39rem); overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: #e8ebf2; }
-.report-story--clarity .report-clarity-visual .report-visual { width: min(82%, 50rem); height: 100%; min-height: inherit; margin-inline: auto; border: 0; border-radius: 0; }
-.report-visual--metrics img { object-position: 50% 24%; }
+.report-story--clarity .report-clarity-visual { grid-column: 1 / span 7; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: #e8ebf2; }
+.report-story--clarity .report-clarity-visual > img { display: block; width: 100%; height: auto; }
 .report-story--clarity .case-story-copy { grid-column: 9 / span 4; }
-.report-action-visual { display: grid; grid-column: 6 / -1; grid-template-columns: 1fr 1fr; align-items: end; gap: clamp(1rem,2.5vw,2.5rem); min-height: clamp(23rem,36vw,39rem); padding: clamp(1.2rem,4vw,4rem); overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: #eef2f6; }
-.report-visual--action { aspect-ratio: 3 / 4.1; }
-.report-visual--action img { object-position: 50% 46%; }
-.report-visual--support { aspect-ratio: 3 / 3.3; transform: translateY(-12%); }
-.report-visual--support img { object-position: 50% 55%; }
+.report-action-visual { display: block; grid-column: 6 / -1; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: #eef2f6; }
+.report-action-visual > img { display: block; width: 100%; height: auto; }
 .report-case .case-system-screen { min-height: 10rem; }
 .report-case .case-system-screen .report-visual { width: 100%; height: 100%; border: 0; border-radius: 0; }
+.report-case .report-system-visual { min-height: 0; }
+.report-case .report-system-visual img { display: block; width: 100%; height: auto; }
 .report-system-screens { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
 .report-system-screens .report-visual { min-height: 10rem; }
 .report-visual--trend img { object-position: 50% 50%; }
@@ -1620,10 +1619,9 @@ a:focus-visible {
   .report-story { display: flex; flex-direction: column; align-items: stretch; gap: 2rem; }
   .report-story .case-story-copy { max-width: calc(100vw - (2 * var(--gutter))); }
   .report-story--hierarchy .case-story-copy, .report-story--action .case-story-copy { order: -1; }
-  .report-hierarchy-visual { grid-template-columns: 1fr 1fr; min-height: 22rem; padding: 1rem; }
-  .report-story--clarity .report-clarity-visual { min-height: 20rem; }
-  .report-story--clarity .report-clarity-visual .report-visual { width: 92%; }
-  .report-action-visual { min-height: 22rem; padding: 1rem; }
+  .report-hierarchy-visual { min-height: 0; padding: 0; }
+  .report-story--clarity .report-clarity-visual { min-height: 0; }
+  .report-action-visual { min-height: 0; padding: 0; }
   .report-leaderboard { display: flex; flex-direction: column; align-items: stretch; gap: 2rem; }
   .report-leaderboard .case-story-copy { max-width: calc(100vw - (2 * var(--gutter))); }
   .report-leaderboard h2 { font-size: clamp(2.1rem,9.8vw,2.55rem); }
